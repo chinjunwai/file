@@ -1,0 +1,47 @@
+
+<ion-content>
+  <div style="width: 100vw;display: flex;justify-content: center;height: 100vh;">
+  
+    <div class="wholePage">
+
+      <div class="staffTitle">
+        <div class="title">NEW BRANCH</div>
+          <ion-icon class="back"  name="close-outline" (click)="backToBranch()"></ion-icon>
+      </div>
+  
+      <div class="content">
+        <div class="keyIn">
+          <div class="input">
+            <div class="id">ID :</div> 
+            <ion-input class="inId" [(ngModel)]="branch.bID" placeholder="ID"></ion-input>
+          </div>
+          <div class="input2">
+            <div class="name">Name :</div> 
+            <ion-input class="inname" [(ngModel)]="branch.name" placeholder="Name"></ion-input>
+          </div>
+          
+        </div>
+  
+        <!-- <div class="upload">
+          <div class="txt">Upload Your Stuff</div>
+          <ion-button class="upB">Upload</ion-button>
+        </div> -->
+  
+        <div class="button">
+          <div class="can">
+            <ion-button class="cancel" shape="round" (click)="backToBranch()"> Cancel</ion-button></div>
+          <!-- <div class="cf">
+            <ion-button class="conf"> Confirm</ion-button></div> -->
+            <div class="upload">
+              <ion-button class="upB" (click)="create()" shape="round" >Create</ion-button>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  </div>
+ 
+
+</ion-content>

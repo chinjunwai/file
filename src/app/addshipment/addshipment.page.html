@@ -1,0 +1,70 @@
+<ion-content>
+  <div style="width: 100vw;display: flex;justify-content: center;">
+  
+    <div class="wholePage">
+
+      <div class="staffTitle">
+        <div class="title">NEW SHIPMENT</div>
+          <ion-icon class="back" (click)="close()" name="close-outline"></ion-icon>
+      </div>
+  
+      <div class="content">
+        <div class="keyIn">
+          <div class="input">
+            <div class="in">Shipment ID:</div> 
+            <ion-input class="key" placeholder="  Shipment ID" [(ngModel)]="ship['shipID']"></ion-input>
+          </div>
+          <div class="input2">
+            <div class="in2">Order Date:</div> 
+              <ion-datetime class="key2" displayFormat="DD MM YYYY" placeholder="Select Order Date" max="2050-12-31" [(ngModel)]="ship['OrderDate']"></ion-datetime>
+          </div>
+          <div class="input3">
+            <div class="in3">Received Date:</div> 
+              <ion-datetime class="key3" displayFormat="DD MM YYYY" placeholder="Select ETA Date" max="2050-12-31" [(ngModel)]="ship['Received']"></ion-datetime>
+          </div>
+          <div class="input4">
+            <div class="in5">From:</div> 
+            <ion-input class="key" placeholder="From where" [(ngModel)]="ship['From']"></ion-input>
+          </div>
+         
+          
+        </div>
+  
+        <div class="button">
+          <div class="can">
+            <ion-button class="cancel" shape="round" (click)="close()"> Cancel</ion-button></div>
+          <div class="cf">
+            <ion-button class="conf" shape="round" (click)="upload()"> Confirm</ion-button></div>
+            <div class="upload">
+              <div class="txt">Upload the Details</div>
+              <ion-button class="upB"  shape="round">Upload <input #uploadEl (change)="changeListener($event)" style='position:absolute;height:100%;width:100%;z-index:1000;opacity: 0;top:0;left:0;' type="file"></ion-button>
+            </div>
+        </div>
+      </div>
+
+      <div class="table" style="border: 1px solid black;margin-top: 15px;width: 800px;overflow-x: scroll;padding: 10px;">
+       
+        <div style='display:flex;align-items: center;border: 1px solid #eeeeee;' *ngFor="let vertical of table">
+          
+          <div style='text-align: center;border:1px solid #eeeeee;' *ngFor='let horizontal of vertical; let i = index'>
+           
+            <div *ngIf='i == 1' style='width:150px;'>  {{horizontal}}</div>
+          
+           
+            <div *ngIf='i != 1' style='width:50px;'>  {{horizontal}}</div>
+          </div>
+          
+        </div>
+
+        <div class="pro">
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+ 
+
+</ion-content>
