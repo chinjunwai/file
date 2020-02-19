@@ -1,0 +1,99 @@
+<ion-content>
+  <div style='width:100vw;display:flex;justify-content: center;'>
+    <div class="wholething" style="overflow-x:scroll">
+      <div class="left">
+        <div class="imageHouse">
+          <div class="image1">
+            <img src="http://www.romantika2u.com/image/cache/Company%20Logo/header-logo-295x127-295x127.jpg" alt=""
+              class="image">
+          </div>
+        </div>
+        <div class="allButtons">
+          <div class="shipbuttons" [ngClass]="title == 'Shipments'? 'selectorx' : 'selector' " (click)="toShipment()">
+            Ship From
+          </div>
+          <div class="branchbuttons" [ngClass]="title == 'Branch'? 'selectorx' : 'selector' " (click)='toBranch()'>
+            Ship To
+          </div>
+          <div class="dispactchbuttons" [ngClass]="title == 'Dispatch'? 'selectorx' : 'selector' "
+            (click)='toDispatch()'>
+            Branch
+          </div>
+          <div class="usersbuttons" [ngClass]="title == 'Item'? 'selectorx' : 'selector' " (click)="title = 'Item'">
+            Item
+          </div>
+          <div class="reportbuttons" [ngClass]="title == 'Report'? 'selectorx' : 'selector' "
+            (click)="title = 'Report'">
+            Report
+          </div>
+          <div class="logoutbuttons" [ngClass]="title == 'Users'? 'selectorx' : 'selector' "
+            (click)="title = 'Log Out'">
+            Users
+          </div>
+          <div class="logoutbuttons" [ngClass]="title == 'Log Out'? 'selectorx' : 'selector' "
+            (click)="title = 'Log Out'">
+            Log Out
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="topper">
+          <!-- <div class="searchBox">
+            <ion-item style="font-size:large;">
+              <ion-input [(ngModel)]='keyword' type="text" placeholder="Search..."></ion-input>
+            </ion-item>
+          </div> -->
+          <!-- <div class="searchButton">
+            <ion-icon name="search-outline" style="font-size: 30px;"></ion-icon>
+          </div> -->
+          <div class="title" style="width: 900px;font-size: 30px;color: white;text-align: center;">
+            Report
+          </div>
+          <div class="addButton" style="width:100px;font-size:30px;color:white;">
+            <ion-icon name="add-outline" (click)="toAddReport()" ></ion-icon>
+          </div>
+        </div>
+          <div class="shipmentBox" >
+            <div class="branchBox" *ngFor="let item of reportList" (click)="toShipmentDetail(item['key'])">
+              <div class="idBox" style="display: flex; flex-direction: column;">
+                <div class="id" style="font-weight: 800;">Date :</div>
+                <div class="data">{{item['Date']  | date: 'dd MMM yyyy'    }}</div>
+  
+              </div>
+              <div class="etaDate">
+                <div class="etaBox" style="display: flex; flex-direction: column;">
+                  <div class="etaDate" style="font-weight: 800;">Branch ID:</div>
+                  <div class="data">{{item['bID']}}</div>
+  
+                </div>
+  
+              </div>
+              <div class="dispatchDate">
+                <div class="etaBox" style="display: flex; flex-direction: column;">
+                  <div class="etaDate" style="font-weight: 800;">Product ID:</div>
+                  <div class="data">{{item['pID']}}</div>
+  
+                </div>
+  
+              </div>
+              <div class="dueDate">
+                <div class="dueBox" style="display: flex; flex-direction: column;">
+                  <div class="dueDate" style="font-weight: 800;">Required: </div>
+                  <div class="data">{{item['unknown']}}</div>
+  
+                </div>
+  
+              </div>
+            </div>
+  
+  
+          </div>
+
+        
+      </div>
+
+    </div>
+</div>
+
+</ion-content>
