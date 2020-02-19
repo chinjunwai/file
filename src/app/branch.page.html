@@ -1,0 +1,64 @@
+<ion-content>
+  <div style='width:100vw;display:flex;justify-content: center;'>
+    <div class="wholething" style="overflow-x:scroll">
+      <div class="left">
+        <div class="imageHouse">
+          <div class="image1">
+            <img
+              src="http://www.romantika2u.com/image/cache/Company%20Logo/header-logo-295x127-295x127.jpg"
+              alt="" class="image">
+          </div>
+        </div>
+        <div class="allButtons">
+          <div class="shipbuttons" [ngClass]="title == 'Shipments'? 'selectorx' : 'selector' " (click)="toShipment()">
+            Shipments</div>
+          <div class="branchbuttons" [ngClass]="title == 'Branch'? 'selectorx' : 'selector' "
+            (click)="title = 'Branch'">Branch</div>
+          <div class="dispactchbuttons" [ngClass]="title == 'Dispatch'? 'selectorx' : 'selector' "
+            (click)="title = 'Dispatch'">Dispatch</div>
+          <div class="usersbuttons" [ngClass]="title == 'Users'? 'selectorx' : 'selector' " (click)="title = 'Users'">
+            Users</div>
+          <div class="logoutbuttons" [ngClass]="title == 'Log Out'? 'selectorx' : 'selector' "
+            (click)="title = 'Log Out'">Log Out</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="topper">
+          <div class="searchBox">
+            <ion-item style="font-size:large;">
+              <ion-input type="text" placeholder="Search..." [(ngModel)]="keyword"></ion-input>
+            </ion-item>
+          </div>
+          <div class="searchButton">
+            <ion-icon name="search-outline" style="font-size: 30px;"></ion-icon>
+          </div>
+          <div class="addButton">
+            <ion-icon name="add-outline" (click)="toAddBranch()"></ion-icon>
+          </div>
+        </div>
+        <div class="shipmentBox">
+          <div class="branchBox" *ngFor="let each of sorting(branchlist)">
+            <div class="idBox">
+              <div class="id" style="font-weight: 800;"> Branch ID :</div>
+              <div class="data">{{each['bID']}}</div>
+            </div>
+            <div class="name">
+              <div class="nameBox">
+                <div class="id" style="font-weight: 800;"> Branch name :</div>
+                <div class="data">{{each['name']}}</div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</ion-content>
